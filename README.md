@@ -11,6 +11,8 @@ This node pack integrates the [Tencent HunyuanPortrait](https://github.com/Tence
 *   **Portrait Animation:** Generates videos based on a source portrait image and a driving video.
 *   **Customizable Preprocessing & Generation:** Offers various parameters to control the preprocessing and video generation stages.
 
+![Workflow Example](https://github.com/BobRandomNumber/ComfyUI_HunyuanPortrait/blob/main/example_workflows/HunyuanPortrait.png)
+
 ## Setup
 
 ### Clone or download this repository.
