@@ -101,5 +101,5 @@ ComfyUI/
     *   Alternatively, connect it to a `VideoCombine (VHS)` node to assemble the frames into a video file (e.g., MP4, GIF). Ensure the `frame_rate` in `VideoCombine` matches your `fps_generation` setting in the Generator for correct playback speed.
 
 ## Notes
-*   **Use a color match node to restore color levels as outputs messy
+*   **Use a color match node to restore color levels as outputs messy**
 *   **Dependency Version:** It is crucial to use `diffusers==0.29.0` as specified in `requirements.txt`. Newer versions of `diffusers` may have breaking API changes that are incompatible with the vendored code in this node pack.
