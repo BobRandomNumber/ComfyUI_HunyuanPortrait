@@ -52,7 +52,7 @@ Organize the downloaded files as follows:
     `ComfyUI/models/vae/` (e.g., `ComfyUI/models/vae/diffusion_pytorch_model.fp16.safetensors`)
 
 **The final structure should look like this:**
-
+```
 ComfyUI/
 └── models/
 	├── HunyuanPortrait/ <-- This is your 'model_folder' for the node
@@ -68,7 +68,7 @@ ComfyUI/
 	│   └── unet.pth
 	└── vae/
 		└── diffusion_pytorch_model.fp16.safetensors <-- Or your chosen VAE file
-
+```
       
 ## How to Use
 
