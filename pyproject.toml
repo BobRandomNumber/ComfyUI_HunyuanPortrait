@@ -1,0 +1,15 @@
+[project]
+name = "hunyuanportrait"
+description = "HunyuanPortrait enthusiast level node pack for experimental and educational exploration"
+version = "0.1.0"
+license = {file = "LICENSE"}
+dependencies = ["diffusers==0.29.0", "omegaconf", "onnxruntime-gpu # or onnxruntime if no GPU/CPU preference for ONNX", "decord", "imageio", "scikit-image", "opencv-python"]
+
+[project.urls]
+Repository = "https://github.com/BobRandomNumber/ComfyUI_HunyuanPortrait"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "bobrandomnumber"
+DisplayName = "ComfyUI_HunyuanPortrait"
+Icon = ""
