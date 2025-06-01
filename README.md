@@ -59,7 +59,7 @@ ComfyUI/
 └── models/
 	├── HunyuanPortrait/ <-- This is your 'model_folder' for the node
 	│ ├── arcface.onnx
-	│ └── yoloface_v5m.pt
+	│ ├── yoloface_v5m.pt
 	│ └── hyportrait/ <-- folder containing dino.pth, unet.pth, etc.
 	│   ├── dino.pth
 	│   ├── expression.pth
@@ -69,7 +69,7 @@ ComfyUI/
 	│   ├── pose_guider.pth
 	│   └── unet.pth
 	└── vae/
-		└── diffusion_pytorch_model.fp16.safetensors <-- Or your chosen VAE file
+	  └── diffusion_pytorch_model.fp16.safetensors <-- Or your chosen VAE file
 ```
       
 ## How to Use
