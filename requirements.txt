@@ -1,0 +1,7 @@
+diffusers==0.29.0
+omegaconf
+onnxruntime-gpu # or onnxruntime if no GPU/CPU preference for ONNX
+decord
+imageio
+scikit-image
+opencv-python
