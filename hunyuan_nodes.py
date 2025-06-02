@@ -424,8 +424,10 @@ class HunyuanPortrait_Generator:
                 dfeat = torch.cat([mfeat_embed, dpfeat_embed.unsqueeze(1).repeat(1, mfeat_embed.shape[1], 1)], dim=-1).unsqueeze(0)
                 udfeat = torch.zeros_like(dfeat)
                 pc_batch_re = rearrange(pc_batch.unsqueeze(0), 'b f c h w -> b c f h w')
-                pose_cond_tensor_all.append(pc_batch_re); driven_feat_all.append(dfeat)
-                uncond_driven_feat_all.append(udfeat); num_frames_all += nfb
+                pose_cond_tensor_all.append(pc_batch_re)
+                driven_feat_all.append(dfeat)
+                uncond_driven_feat_all.append(udfeat)
+                num_frames_all += nfb
 
             pose_cond_tensor_all = torch.cat(pose_cond_tensor_all, dim=2)
             uncond_driven_feat_all = torch.cat(uncond_driven_feat_all, dim=1)
@@ -435,12 +437,18 @@ class HunyuanPortrait_Generator:
             if pad_motion_frames > 0:
                 for i_pad in range(pad_motion_frames):
                     w_pad = i_pad / pad_motion_frames
-                    temp_pc_list.append(pose_cond_tensor_all[:,:,:1]); temp_df_list.append(driven_feat_all[:,:1]*w_pad); temp_udf_list.append(uncond_driven_feat_all[:,:1])
-            temp_pc_list.append(pose_cond_tensor_all); temp_df_list.append(driven_feat_all); temp_udf_list.append(uncond_driven_feat_all)
+                    temp_pc_list.append(pose_cond_tensor_all[:,:,:1])
+                    temp_df_list.append(driven_feat_all[:,:1]*w_pad)
+                    temp_udf_list.append(uncond_driven_feat_all[:,:1])
+            temp_pc_list.append(pose_cond_tensor_all)
+            temp_df_list.append(driven_feat_all)
+            temp_udf_list.append(uncond_driven_feat_all)
             if pad_motion_frames > 0:
                 for i_pad in range(pad_motion_frames):
                     w_pad = i_pad / pad_motion_frames
-                    temp_pc_list.append(pose_cond_tensor_all[:,:,-1:]); temp_df_list.append(driven_feat_all[:,-1:]*(1-w_pad)); temp_udf_list.append(uncond_driven_feat_all[:,:1])
+                    temp_pc_list.append(pose_cond_tensor_all[:,:,-1:])
+                    temp_df_list.append(driven_feat_all[:,-1:]*(1-w_pad))
+                    temp_udf_list.append(uncond_driven_feat_all[:,:1])
             if pad_motion_frames > 0:
                 pose_cond_tensor_all, driven_feat_all, uncond_driven_feat_all = \
                     torch.cat(temp_pc_list, dim=2), torch.cat(temp_df_list, dim=1), torch.cat(temp_udf_list, dim=1)

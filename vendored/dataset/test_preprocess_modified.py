@@ -248,7 +248,8 @@ def preprocess_modified(
 
     if not bboxes_drv_first_xywh_list.size:
         print("Warning: No face in first frame of driving video. Using scaled source bbox as guide.")
-        h_drv, w_drv = first_frame_np_rgb.shape[:2]; h_src, w_src = origin_src_np_rgb.shape[:2]
+        h_drv, w_drv = first_frame_np_rgb.shape[:2]
+        h_src, w_src = origin_src_np_rgb.shape[:2]
         scale_h, scale_w = h_drv/h_src if h_src > 0 else 1.0, w_drv/w_src if w_src > 0 else 1.0
         x1_s, y1_s, w_s, h_s = bbox_orig_xywh
         bbox_drv_first_xyxy = [x1_s*scale_w, y1_s*scale_h, (x1_s+w_s)*scale_w, (y1_s+h_s)*scale_h]
