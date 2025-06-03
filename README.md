@@ -1,4 +1,4 @@
-# This is an enthusiast level node pack for experimental and educational use
+# This is an enthusiast level node pack for experimental and educational exploration
 
 # ComfyUI_HunyuanPortrait Node Pack
 
